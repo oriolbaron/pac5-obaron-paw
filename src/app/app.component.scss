@@ -1,0 +1,88 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .app-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .main-content {
+    margin-top: 64px; // altura del toolbar
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+
+    @media (max-width: 599px) {
+      margin-top: 56px; // altura del toolbar en móvil
+      padding: 16px;
+    }
+  }
+}
+
+// Estils globals per components Material
+:host ::ng-deep {
+  .mat-card {
+    margin-bottom: 16px;
+    transition: transform 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  }
+
+  .mat-table {
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+    .mat-row {
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: rgba(0,0,0,0.04);
+      }
+    }
+  }
+
+  .mat-spinner {
+    margin: 2rem auto;
+  }
+
+  .mat-expansion-panel {
+    margin-bottom: 16px;
+  }
+
+  .mat-tree {
+    background: transparent;
+  }
+
+  .mat-chip-list {
+    .mat-chip {
+      margin: 4px;
+    }
+  }
+}
+
+// Animacions
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

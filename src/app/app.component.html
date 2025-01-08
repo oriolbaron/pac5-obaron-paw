@@ -1,0 +1,9 @@
+<div class="app-container">
+  <mat-toolbar color="primary" class="app-toolbar">
+    <span>Pokemon PWA</span>
+  </mat-toolbar>
+
+  <main [@routeAnimations]="prepareRoute(outlet)" class="main-content">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </main>
+  </div>

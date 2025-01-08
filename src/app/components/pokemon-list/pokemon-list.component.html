@@ -1,0 +1,26 @@
+<div class="pokemon-list-container">
+  <div class="header">
+    <h1>Pokédex</h1>
+    <button mat-icon-button (click)="toggleView()">
+      <mat-icon>{{showAsGrid ? 'grid_view' : 'view_list'}}</mat-icon>
+    </button>
+  </div>
+
+  <div class="content" [@fadeIn]>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+    <ng-container *ngIf="!isLoading">
+      <div class="cards-container" *ngIf="!showAsGrid">
+        <app-pokemon-card 
+          *ngFor="let pokemon of pokemons" 
+          [pokemon]="pokemon">
+        </app-pokemon-card>
+      </div>
+
+      <app-pokemon-grid 
+        *ngIf="showAsGrid"
+        [pokemons]="pokemons">
+      </app-pokemon-grid>
+    </ng-container>
+  </div>
+</div> 

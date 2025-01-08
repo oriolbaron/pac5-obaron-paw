@@ -1,0 +1,29 @@
+.pokemon-detail-container {
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .content {
+    padding: 20px;
+
+    .basic-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+
+      button {
+        margin-top: 20px;
+      }
+    }
+
+    .details-accordion {
+      margin-top: 20px;
+    }
+  }
+} 
